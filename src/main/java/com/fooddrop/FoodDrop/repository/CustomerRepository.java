@@ -1,5 +1,6 @@
-package com.fooddrop.FoodDrop.model;
+package com.fooddrop.FoodDrop.repository;
 
+import com.fooddrop.FoodDrop.model.Customer;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

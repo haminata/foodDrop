@@ -1,14 +1,14 @@
 package com.fooddrop.FoodDrop.controller;
 
 import com.fooddrop.FoodDrop.model.Customer;
-import com.fooddrop.FoodDrop.model.CustomerRepository;
+import com.fooddrop.FoodDrop.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(path = "/demo")
+@RequestMapping(path = "/customer")
 public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
@@ -35,6 +35,11 @@ public class CustomerController {
                             oldCustomer.setAddress(customerDetails.getAddress());
                             oldCustomer.setPostCode(customerDetails.getPostCode());
                             oldCustomer.setPassword(customerDetails.getPassword());
+                            oldCustomer.setRole(customerDetails.getRole());
+                            oldCustomer.setUsername(customerDetails.getUsername());
+                            oldCustomer.setPassword(customerDetails.getPassword());
+                            oldCustomer.setEmail(customerDetails.getEmail());
+
                             Customer updatedCustomer = customerRepository.save(oldCustomer);
                             return ResponseEntity.ok().body(updatedCustomer);
                 }).orElse(ResponseEntity.notFound().build());
