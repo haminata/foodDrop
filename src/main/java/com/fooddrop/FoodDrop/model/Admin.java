@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 
 @Entity
-public class FoodDropStaff extends UserBaseEntity {
+public class Admin extends UserBaseEntity {
 
 
 

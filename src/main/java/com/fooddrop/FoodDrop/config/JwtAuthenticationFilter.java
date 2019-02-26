@@ -1,4 +1,4 @@
 //package com.fooddrop.FoodDrop.config;
 //
-//public class JwtTokenAuthenticationFilter {
+//public class JwtAuthenticationFilter {
 //}

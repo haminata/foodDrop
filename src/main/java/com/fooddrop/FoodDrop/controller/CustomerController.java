@@ -29,18 +29,18 @@ public class CustomerController {
     public ResponseEntity<Customer> updateCustomer(@PathVariable Long id,
                                                    @RequestBody Customer customerDetails){
         return customerRepository.findById(id)
-                .map(oldCustomer ->{
-                            oldCustomer.setFirstName(customerDetails.getFirstName());
-                            oldCustomer.setLastName(customerDetails.getLastName());
-                            oldCustomer.setAddress(customerDetails.getAddress());
-                            oldCustomer.setPostCode(customerDetails.getPostCode());
-                            oldCustomer.setPassword(customerDetails.getPassword());
-                            oldCustomer.setRole(customerDetails.getRole());
-                            oldCustomer.setUsername(customerDetails.getUsername());
-                            oldCustomer.setPassword(customerDetails.getPassword());
-                            oldCustomer.setEmail(customerDetails.getEmail());
+                .map(oldCustomerDetails ->{
+                            oldCustomerDetails.setFirstName(customerDetails.getFirstName());
+                            oldCustomerDetails.setLastName(customerDetails.getLastName());
+                            oldCustomerDetails.setAddress(customerDetails.getAddress());
+                            oldCustomerDetails.setPostCode(customerDetails.getPostCode());
+                            oldCustomerDetails.setPassword(customerDetails.getPassword());
+                            oldCustomerDetails.setRole(customerDetails.getRole());
+                            oldCustomerDetails.setUsername(customerDetails.getUsername());
+                            oldCustomerDetails.setPassword(customerDetails.getPassword());
+                            oldCustomerDetails.setEmail(customerDetails.getEmail());
 
-                            Customer updatedCustomer = customerRepository.save(oldCustomer);
+                            Customer updatedCustomer = customerRepository.save(oldCustomerDetails);
                             return ResponseEntity.ok().body(updatedCustomer);
                 }).orElse(ResponseEntity.notFound().build());
 
